@@ -78,8 +78,8 @@ class TaskModelSerializer(serializers.ModelSerializer):
         4- raise << invalid edit Done task
         :return: the same method (update) if passes all cases
         """
-        title = validated_data.get('title')
-        description = validated_data.get('description')
+        title = validated_data.get('title', instance.title)
+        description = validated_data.get('description', instance.description)
         state = validated_data.get('state', instance.state)
         linked_task = validated_data.get('linked_task')
 
@@ -87,9 +87,9 @@ class TaskModelSerializer(serializers.ModelSerializer):
             raise ValidationError("Invalid state change")
         elif linked_task and state != 2:
             raise ValidationError("unable to update linked task, only valid for Progress state")
-        elif (instance.state != 1 and
-              (title or description)):
-            raise ValidationError("Unable to update state, only valid in NEW state")
+        elif (instance.state == 2 and
+              (title != instance.title or description != instance.description)):
+            raise ValidationError("Unable to update in Progress state")
         elif instance.state == 3:
             raise ValidationError("Done state is not editable")
 

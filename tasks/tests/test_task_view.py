@@ -75,7 +75,7 @@ class TestViewTask(TestCase):
 
         # state 2 PROGRESS
 
-        response = self.client.patch(self.task_url, json.dumps(self.update_data),
+        response = self.client.patch(self.task_url, json.dumps(self.task_create_data),
                                      content_type='application/json')
         self.assertEqual(response.status_code, 400)
 
@@ -99,7 +99,7 @@ class TestViewTask(TestCase):
 
         # state 3 DONE
 
-        response = self.client.patch(self.task_url, json.dumps(self.update_data),
+        response = self.client.patch(self.task_url, json.dumps(self.task_create_data),
                                      content_type='application/json')
         self.assertEqual(response.status_code, 400)
 
