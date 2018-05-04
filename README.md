@@ -8,10 +8,11 @@
 #### to run in the terminal inside repo folder write :
 ```shell
 virtualenv env 
+. env/bin/activate
 pip install -r requirments.txt
-python manage collectstatic
-python mange migrate
-python mange runsever 
+python manage.py collectstatic
+python manage.py migrate
+python manage.py runserver 
 ```
 make sure that **python3 & virtualenv** were installed in your machine
 

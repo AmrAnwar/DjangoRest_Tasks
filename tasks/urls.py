@@ -17,7 +17,9 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
+
 from rest_framework.routers import DefaultRouter
+from rest_framework.authtoken import views as rest_views
 
 from .views import TaskModelViewSet, LoginView
 
@@ -28,7 +30,7 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^login/', LoginView.as_view(), name="login"),
     url(r'^admin/', admin.site.urls),
-    url(r'^api-token-auth/', views.obtain_auth_token),
+    url(r'^api-token-auth/', rest_views.obtain_auth_token),
 
 ]
 
