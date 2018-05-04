@@ -5,8 +5,7 @@
 
 -------
 
-####to run in the terminal inside repo folder write :
-
+#### to run in the terminal inside repo folder write :
 ```shell
 virtualenv env 
 pip install -r requirments.txt
