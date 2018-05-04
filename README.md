@@ -4,7 +4,9 @@
 - Progress state tasks could be linked to another task, I handled it like a doubly linked list, from this task, client can reach to its linked task **or**  if from the linked, the client can reach to the former task(outer task) 
 
 -------
+
 ####to run in the terminal inside repo folder write :
+
 ```shell
 virtualenv env 
 pip install -r requirments.txt
