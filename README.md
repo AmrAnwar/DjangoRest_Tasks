@@ -13,7 +13,7 @@ python manage collectstatic
 python mange migrate
 python mange runsever 
 ```
-make your that **python3 & virtualenv** were installed in your machine
+make sure that **python3 & virtualenv** were installed in your machine
 
 
 ------------------
