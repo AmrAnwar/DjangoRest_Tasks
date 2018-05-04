@@ -28,6 +28,8 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^login/', LoginView.as_view(), name="login"),
     url(r'^admin/', admin.site.urls),
+    url(r'^api-token-auth/', views.obtain_auth_token),
+
 ]
 
 if settings.DEBUG:
